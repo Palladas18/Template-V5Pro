@@ -17,6 +17,7 @@
 // ---- END VEXCODE CONFIGURED DEVICES ----
 
 #include "vex.h"
+#include "functions.h"
 
 using namespace vex;
 
@@ -38,7 +39,7 @@ competition Competition;
 void pre_auton(void) {
   // Initializing Robot Configuration. DO NOT REMOVE!
   vexcodeInit();
-  
+  autonSelector();
   // All activities that occur before the competition starts
   // Example: clearing encoders, setting servo positions, ...
 }
@@ -53,10 +54,33 @@ void pre_auton(void) {
 /*  You must modify the code to add your own robot specific commands here.   */
 /*---------------------------------------------------------------------------*/
 
+void auton1(){
+
+}
+
+void auton2(){
+
+}
+
+void auton3(){
+
+}
+
+
 void autonomous(void) {
-  // ..........................................................................
-  // Insert autonomous user code here.
-  // ..........................................................................
+   switch(selected){
+     case 0:
+		 break;
+     case 1:
+     auton1();
+		 break;
+     case 2:
+		 auton2();
+		 break;
+     case 3:
+		 auton3();
+   }
+	return;
 }
 
 /*---------------------------------------------------------------------------*/

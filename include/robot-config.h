@@ -1,3 +1,6 @@
+#include "driveTrain.h"
+#include "pid.h"
+
 using namespace vex;
 
 extern brain Brain;
@@ -12,6 +15,12 @@ extern motor BackRight;
 extern motor FBarR;
 extern motor FBarL;
 extern inertial IMU;
+
+driveTrain drive = driveTrain(3.25, 11.5);
+pidController autonlinear = pidController(0, 0.002, 0, 0.0001);
+pidController autonrotation = pidController(0, 0.001, 0, 0.0001);
+
+
 
 /**
  * Used to initialize code/tasks/devices added using tools in VEXcode Pro.

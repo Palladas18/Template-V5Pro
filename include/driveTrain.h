@@ -16,11 +16,11 @@ class driveTrain{
     {}
 
     double root2 = sqrt(2);
-    double DPS2RPM = 6;
+    double DPS2RPM = 6; // change realative motor cartridge eg 2 for blue and 12 for red
     double degToRad = M_PI / 180;
     double wheelCircumfrence;
     double wheelBaseCircumfrence;
-    double maxRPM = 200;
+    double maxRPM = 200; // change realative motor cartridge eg 600 for blue and 100 for red
 
     double yScaleJoy;
     double rScaleJoy;
@@ -37,15 +37,10 @@ class driveTrain{
     double wheelBL;
     double wheelBR;
 
-    void calculateWheelSpeeds(double y, double r){
-      yVel = y;
-      rVel = r;
+    void calculateWheelSpeeds(double y, double r,double maxRPM){
 
-      linearVel = y;
-      double linearMax = maxRPM;
-
-  		double yRPM = (yVel/(wheelCircumfrence)) * (900 / DPS2RPM);
-  		double rRPM = rVel;
+  		double yRPM = (y/(wheelCircumfrence)) * (900 / DPS2RPM);
+  		double rRPM = r;
 
       if(rRPM > maxRPM) rRPM = getSign(rRPM) * maxRPM;
       if(rRPM > maxRPM) yRPM = getSign(yRPM) * maxRPM;
